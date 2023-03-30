@@ -15,8 +15,8 @@ class _CheckOutTwoState extends State<CheckOutTwo> {
         appBar: AppBar(
           elevation: 0,
           backgroundColor: Colors.transparent,
-          leading: BackButton(color: Colors.black),
-          title: Text(
+          leading: const BackButton(color: Colors.black),
+          title: const Text(
             "Checkout",
             style: TextStyle(color: Colors.black, fontSize: 17, fontWeight: FontWeight.w400, fontFamily: "Poppins"),
           ),
@@ -28,7 +28,7 @@ class _CheckOutTwoState extends State<CheckOutTwo> {
               padding: const EdgeInsets.symmetric(horizontal: 80),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
-                children: [
+                children: const [
                   CircleAvatar(
                     radius: 13,
                     backgroundColor: Color(0xFFFFA500),
@@ -50,14 +50,14 @@ class _CheckOutTwoState extends State<CheckOutTwo> {
                 ],
               ),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             Container(
-              padding: EdgeInsets.all(10),
+              padding: const EdgeInsets.all(10),
               height: 120,
               width: 355,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
-                boxShadow: [
+                boxShadow: const [
                   BoxShadow(color: Color(0x1A7C7C7C), offset: Offset(0, 1), blurRadius: 20, spreadRadius: 0, blurStyle: BlurStyle.outer),
                 ],
               ),
@@ -72,7 +72,7 @@ class _CheckOutTwoState extends State<CheckOutTwo> {
                   Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
+                    children: const [
                       Text(
                         "Lorem ipsum hobel\noligt nesm dejun\nLadies Boot",
                         style: TextStyle(fontSize: 14, fontWeight: FontWeight.w400, fontFamily: "Poppins"),
@@ -84,22 +84,22 @@ class _CheckOutTwoState extends State<CheckOutTwo> {
                       ),
                     ],
                   ),
-                  SizedBox(width: 30),
-                  Text(
+                  const SizedBox(width: 30),
+                  const Text(
                     "\$841.00",
                     style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600, fontFamily: "Poppins"),
                   ),
                 ],
               ),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             Container(
-              padding: EdgeInsets.all(10),
+              padding: const EdgeInsets.all(10),
               height: 120,
               width: 355,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
-                boxShadow: [
+                boxShadow: const [
                   BoxShadow(color: Color(0x1A7C7C7C), offset: Offset(0, 1), blurRadius: 20, spreadRadius: 0, blurStyle: BlurStyle.outer),
                 ],
               ),
@@ -114,7 +114,7 @@ class _CheckOutTwoState extends State<CheckOutTwo> {
                   Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
+                    children: const [
                       Text(
                         "Lorem ipsum hobel\noligt nesm dejun\nLadies Boot",
                         style: TextStyle(fontSize: 14, fontWeight: FontWeight.w400, fontFamily: "Poppins"),
@@ -126,15 +126,15 @@ class _CheckOutTwoState extends State<CheckOutTwo> {
                       ),
                     ],
                   ),
-                  SizedBox(width: 30),
-                  Text(
+                  const SizedBox(width: 30),
+                  const Text(
                     "\$841.00",
                     style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600, fontFamily: "Poppins"),
                   ),
                 ],
               ),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             Padding(
               padding: const EdgeInsets.all(20),
               child: Column(
@@ -142,7 +142,7 @@ class _CheckOutTwoState extends State<CheckOutTwo> {
                   Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
+                    children: const [
                       Text(
                         "Card Number",
                         style: TextStyle(fontSize: 14, fontWeight: FontWeight.w400, fontFamily: "Poppins"),
@@ -153,11 +153,11 @@ class _CheckOutTwoState extends State<CheckOutTwo> {
                       ),
                     ],
                   ),
-                  SizedBox(height: 20),
+                  const SizedBox(height: 20),
                   Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
+                    children: const [
                       Text(
                         "Name",
                         style: TextStyle(fontSize: 14, fontWeight: FontWeight.w400, fontFamily: "Poppins"),
@@ -168,11 +168,11 @@ class _CheckOutTwoState extends State<CheckOutTwo> {
                       ),
                     ],
                   ),
-                  SizedBox(height: 20),
+                  const SizedBox(height: 20),
                   Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
+                    children: const [
                       Text(
                         "Expiry Date",
                         style: TextStyle(fontSize: 14, fontWeight: FontWeight.w400, fontFamily: "Poppins"),
@@ -183,11 +183,11 @@ class _CheckOutTwoState extends State<CheckOutTwo> {
                       ),
                     ],
                   ),
-                  SizedBox(height: 20),
+                  const SizedBox(height: 20),
                   Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
+                    children: const [
                       Text(
                         "CVC/CVV",
                         style: TextStyle(fontSize: 14, fontWeight: FontWeight.w400, fontFamily: "Poppins"),
@@ -201,7 +201,7 @@ class _CheckOutTwoState extends State<CheckOutTwo> {
                 ],
               ),
             ),
-            SizedBox(height: 30),
+            const SizedBox(height: 30),
             InkWell(
               onTap: () {},
               child: Container(
@@ -217,7 +217,7 @@ class _CheckOutTwoState extends State<CheckOutTwo> {
                 ),
               ),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             InkWell(
               onTap: () {},
               child: Container(
