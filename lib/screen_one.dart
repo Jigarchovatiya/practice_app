@@ -76,7 +76,7 @@ class _ScreenOneState extends State<ScreenOne> {
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 50,
             ),
             Center(

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import 'gaji_app/select_screen.dart';
+import 'package:practice_app/gaji_app/checkouttwo.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,9 +15,9 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
         primarySwatch: Colors.blueGrey,
-        bottomSheetTheme: BottomSheetThemeData(backgroundColor: Colors.transparent),
+        bottomSheetTheme: const BottomSheetThemeData(backgroundColor: Colors.transparent),
       ),
-      home: const SelectScreen(),
+      home: const CheckOutTwo(),
     );
   }
 }
