@@ -8,29 +8,6 @@ class SelectScreen extends StatefulWidget {
 }
 
 class _SelectScreenState extends State<SelectScreen> {
-  String sizeData = "size 1";
-  List sizeList = [
-    {
-      "value": "size 1",
-      "data": "44",
-    },
-    {
-      "value": "size 2",
-      "data": "43",
-    },
-    {
-      "value": "size 3",
-      "data": "42",
-    },
-    {
-      "value": "size 4",
-      "data": "41",
-    },
-    {
-      "value": "size 5",
-      "data": "40",
-    },
-  ];
   bool radioColorData = true;
 
   // Initial radio list tile Value
