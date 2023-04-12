@@ -36,7 +36,7 @@ class _TimePickerState extends State<TimePicker> {
         body: Center(
           child: Column(
             children: [
-              SizedBox(
+              const SizedBox(
                 height: 50,
               ),
               Text(
