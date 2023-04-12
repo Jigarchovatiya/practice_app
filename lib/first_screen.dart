@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:practice_app/second_screen.dart';
 
 class FirstScreen extends StatelessWidget {
   const FirstScreen({Key? key}) : super(key: key);
@@ -10,18 +9,77 @@ class FirstScreen extends StatelessWidget {
         child: Scaffold(
       backgroundColor: Colors.transparent,
       body: Center(
-        child: ElevatedButton(
-          onPressed: () => Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => const SecondScreen(),
-              )),
-          style: const ButtonStyle(
-            backgroundColor: MaterialStatePropertyAll(
-              Color(0xFF238D8D),
-            ),
+        child: Padding(
+          padding: const EdgeInsets.all(20),
+          child: Column(
+            children: [
+              Container(
+                height: 55,
+                width: 355,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(5),
+                  border: Border.all(
+                    width: 1,
+                    color: const Color(0xFFA1A1A1),
+                  ),
+                ),
+              ),
+              const Expanded(
+                child: VerticalDivider(
+                  color: Color(0xFFA1A1A1),
+                  thickness: 2,
+                  indent: 10,
+                  endIndent: 10,
+                ),
+              ),
+              Container(
+                height: 55,
+                width: 355,
+                decoration: BoxDecoration(
+                  border: Border.all(
+                    width: 1,
+                    color: const Color(0xFFA1A1A1),
+                  ),
+                ),
+              ),
+              const Expanded(
+                child: VerticalDivider(
+                  color: Color(0xFFA1A1A1),
+                  thickness: 2,
+                  indent: 10,
+                  endIndent: 10,
+                ),
+              ),
+              Container(
+                height: 55,
+                width: 355,
+                decoration: BoxDecoration(
+                  border: Border.all(
+                    width: 1,
+                    color: const Color(0xFFA1A1A1),
+                  ),
+                ),
+              ),
+              const Expanded(
+                child: VerticalDivider(
+                  color: Color(0xFFA1A1A1),
+                  thickness: 2,
+                  indent: 10,
+                  endIndent: 10,
+                ),
+              ),
+              Container(
+                height: 55,
+                width: 355,
+                decoration: BoxDecoration(
+                  border: Border.all(
+                    width: 1,
+                    color: const Color(0xFFA1A1A1),
+                  ),
+                ),
+              ),
+            ],
           ),
-          child: const Text("Next Page ->"),
         ),
       ),
     ));
