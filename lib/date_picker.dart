@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 class DatePicker extends StatefulWidget {
   const DatePicker({Key? key}) : super(key: key);
@@ -8,6 +9,7 @@ class DatePicker extends StatefulWidget {
 }
 
 class _DatePickerState extends State<DatePicker> {
+  var myFormat = DateFormat('dd-MM-yyyy');
   DateTime dateTime = DateTime.now();
   void _showDatePicker() {
     showDatePicker(
@@ -27,13 +29,13 @@ class _DatePickerState extends State<DatePicker> {
     return SafeArea(
         child: Scaffold(
       appBar: AppBar(
-        title: Text("Date Picker"),
+        title: const Text("Date Picker"),
         actions: [
           IconButton(
             onPressed: _showDatePicker,
-            icon: Icon(Icons.calendar_month, size: 30),
+            icon: const Icon(Icons.calendar_month, size: 30),
           ),
-          SizedBox(
+          const SizedBox(
             width: 30,
           ),
         ],
@@ -41,10 +43,10 @@ class _DatePickerState extends State<DatePicker> {
       body: Center(
         child: Column(
           children: [
-            SizedBox(
+            const SizedBox(
               height: 80,
             ),
-            Text(dateTime.toString(), style: TextStyle(fontSize: 30)),
+            Text(myFormat.format(dateTime), style: const TextStyle(fontSize: 30)),
           ],
         ),
       ),
