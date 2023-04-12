@@ -36,6 +36,9 @@ class _TimePickerState extends State<TimePicker> {
         body: Center(
           child: Column(
             children: [
+              SizedBox(
+                height: 50,
+              ),
               Text(
                 _timeOfDay.format(context).toString(),
                 style: const TextStyle(fontSize: 50),

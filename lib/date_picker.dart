@@ -1,73 +1,53 @@
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
 
-void main() {
-  runApp(MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: "Date Picker",
-      home: HomePage(),
-    );
-  }
-}
-
-class HomePage extends StatefulWidget {
-  @override
-  State<StatefulWidget> createState() {
-    return _HomePage();
-  }
-}
-
-class _HomePage extends State<HomePage> {
-  TextEditingController dateInput = TextEditingController();
+class DatePicker extends StatefulWidget {
+  const DatePicker({Key? key}) : super(key: key);
 
   @override
-  void initState() {
-    dateInput.text = ""; //set the initial value of text field
-    super.initState();
+  State<DatePicker> createState() => _DatePickerState();
+}
+
+class _DatePickerState extends State<DatePicker> {
+  DateTime dateTime = DateTime.now();
+  void _showDatePicker() {
+    showDatePicker(
+      context: context,
+      initialDate: DateTime.now(),
+      firstDate: DateTime(2000),
+      lastDate: DateTime(2025),
+    ).then((value) {
+      setState(() {
+        dateTime = value!;
+      });
+    });
   }
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: AppBar(
-          title: const Text("DatePicker in Flutter"),
-          backgroundColor: Colors.redAccent, //background color of app bar
+    return SafeArea(
+        child: Scaffold(
+      appBar: AppBar(
+        title: Text("Date Picker"),
+        actions: [
+          IconButton(
+            onPressed: _showDatePicker,
+            icon: Icon(Icons.calendar_month, size: 30),
+          ),
+          SizedBox(
+            width: 30,
+          ),
+        ],
+      ),
+      body: Center(
+        child: Column(
+          children: [
+            SizedBox(
+              height: 80,
+            ),
+            Text(dateTime.toString(), style: TextStyle(fontSize: 30)),
+          ],
         ),
-        body: Container(
-            padding: const EdgeInsets.all(15),
-            height: MediaQuery.of(context).size.width / 3,
-            child: Center(
-                child: TextField(
-              controller: dateInput,
-              //editing controller of this TextField
-              decoration: const InputDecoration(
-                  icon: Icon(Icons.calendar_month), //icon of text field
-                  labelText: "Enter Date" //label text of field
-                  ),
-              readOnly: true,
-              //set it true, so that user will not able to edit text
-              onTap: () async {
-                DateTime? pickedDate = await showDatePicker(
-                    context: context,
-                    initialDate: DateTime.now(),
-                    firstDate: DateTime(1950),
-                    //DateTime.now() - not to allow to choose before today.
-                    lastDate: DateTime(2100));
-
-                if (pickedDate != null) {
-                  print(pickedDate); //pickedDate output format => 2021-03-10 00:00:00.000
-                  String formattedDate = DateFormat('yyyy-MM-dd').format(pickedDate);
-                  print(formattedDate); //formatted date output using intl package =>  2021-03-16
-                  setState(() {
-                    dateInput.text = formattedDate; //set output date to TextField value.
-                  });
-                } else {}
-              },
-            ))));
+      ),
+    ));
   }
 }
