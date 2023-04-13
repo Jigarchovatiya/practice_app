@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import 'date_picker.dart';
+import 'package:practice_app/time_picker.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,7 +17,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blueGrey,
         bottomSheetTheme: const BottomSheetThemeData(backgroundColor: Colors.transparent),
       ),
-      home: const DatePicker(),
+      home: const TimePicker(),
     );
   }
 }

@@ -50,6 +50,7 @@ class _SearchErrorState extends State<SearchError> {
           ),
         ),
       ),
-    ));
+    ),
+    );
   }
 }
