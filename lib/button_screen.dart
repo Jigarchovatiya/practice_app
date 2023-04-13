@@ -81,10 +81,10 @@ class _ButtonScreenState extends State<ButtonScreen> {
             onTap: () {
               debugPrint("onTap --> ");
             },
-            child: const SizedBox(
+            child: Container(
               height: 30,
               width: 30,
-              child: Icon(Icons.add),
+              child: const Icon(Icons.add),
             ),
           ),
           const SizedBox(height: 15),
@@ -99,7 +99,7 @@ class _ButtonScreenState extends State<ButtonScreen> {
           const SizedBox(height: 15),
           OutlinedButton(
             onPressed: () {
-              debugPrint("onTap --> OutlinedButton");
+              print("onTap --> OutlinedButton");
             },
             autofocus: true,
             child: const Text("Hello!"),
@@ -121,12 +121,12 @@ class _ButtonScreenState extends State<ButtonScreen> {
                 ),
                 TextSpan(
                   text: 'Terms of Service',
-                  style: const TextStyle(
+                  style: TextStyle(
                     color: Colors.black,
                   ),
                   recognizer: TapGestureRecognizer()
                     ..onTap = () {
-                      debugPrint('Terms of Service"');
+                      print('Terms of Service"');
                     },
                 ),
                 const TextSpan(
@@ -137,12 +137,12 @@ class _ButtonScreenState extends State<ButtonScreen> {
                 ),
                 TextSpan(
                   text: 'Privacy Policy',
-                  style: const TextStyle(
+                  style: TextStyle(
                     color: Colors.green,
                   ),
                   recognizer: TapGestureRecognizer()
                     ..onTap = () {
-                      debugPrint('Privacy Policy"');
+                      print('Privacy Policy"');
                     },
                 ),
               ],
@@ -177,7 +177,8 @@ class _ButtonScreenState extends State<ButtonScreen> {
             child: Checkbox(
               value: switchValue,
               checkColor: Colors.red,
-              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(5)),
               onChanged: (value) {
                 debugPrint("Value --->> $value");
                 switchValue = value!;
@@ -207,17 +208,25 @@ class _ButtonScreenState extends State<ButtonScreen> {
               PopupMenuItem(
                 value: 1,
                 child: Row(
-                  children: const [Icon(Icons.star), SizedBox(width: 10), Text("Get The App")],
+                  children: const [
+                    Icon(Icons.star),
+                    SizedBox(width: 10),
+                    Text("Get The App")
+                  ],
                 ),
               ),
               PopupMenuItem(
                 value: 65,
                 child: Row(
-                  children: const [Icon(Icons.chrome_reader_mode), SizedBox(width: 10), Text("About")],
+                  children: const [
+                    Icon(Icons.chrome_reader_mode),
+                    SizedBox(width: 10),
+                    Text("About")
+                  ],
                 ),
               ),
             ],
-            offset: const Offset(0, 100),
+            offset: Offset(0, 100),
             color: Colors.grey,
             elevation: 2,
             onSelected: (value) {
@@ -245,7 +254,7 @@ class _ButtonScreenState extends State<ButtonScreen> {
           ),
           const SizedBox(height: 15),
           ListView.builder(
-            physics: const NeverScrollableScrollPhysics(),
+            physics: NeverScrollableScrollPhysics(),
             shrinkWrap: true,
             itemCount: radioListItems.length,
             itemBuilder: (context, index) {
