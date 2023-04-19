@@ -4,6 +4,12 @@
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
+	<key>NSMicrophoneUsageDescription</key>
+    <string>Post videos to profile</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>This app need this permission to access your photos to set your profile picture.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>This app need this permission to access your camera to set your profile picture.</string>
 	<key>CFBundleDisplayName</key>
 	<string>Practice App</string>
 	<key>CFBundleExecutable</key>

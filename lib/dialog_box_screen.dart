@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:practice_app/second_screen.dart';
 
 class DialogScreen extends StatefulWidget {
   const DialogScreen({Key? key}) : super(key: key);
@@ -27,13 +28,24 @@ class _DialogScreenState extends State<DialogScreen> {
                     title: const Text("title"),
                     // titlePadding: ,
                     // titleTextStyle: ,
-                    content: const Text(
-                        "You have complete the signup, Now you can login"),
+                    content: const Text("You have complete the signup, Now you can login"),
                     // contentPadding: ,
                     // contentTextStyle: ,
                     actions: [
                       TextButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.pop(context);
+                        },
+                        child: const Text("Cancel"),
+                      ),
+                      TextButton(
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const SecondScreen(),
+                              ));
+                        },
                         child: const Text("Ok"),
                       ),
                       // TextButton(
