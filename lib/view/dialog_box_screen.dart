@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:practice_app/second_screen.dart';
+import 'package:practice_app/view/second_screen.dart';
 
 class DialogScreen extends StatefulWidget {
   const DialogScreen({Key? key}) : super(key: key);
