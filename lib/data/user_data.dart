@@ -1,5 +1,5 @@
 Map<String, dynamic> employeeData = {
-  "company_name": "Sahil Modi",
+  "company_name": "Modi Infotech",
   "company_time": "09:30 to 06:30",
   "emp_list": [
     {"name": "Sahil Patel", "id": 202020101, "department": "Ios", "mobile": 5642121465, "post": "Department Manager"},
