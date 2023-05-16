@@ -3,8 +3,6 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-import '../../rec/constant/constant.dart';
-
 class LocalDataMap extends StatefulWidget {
   const LocalDataMap({Key? key}) : super(key: key);
 
@@ -13,11 +11,10 @@ class LocalDataMap extends StatefulWidget {
 }
 
 class _LocalDataMapState extends State<LocalDataMap> {
+  String data = "information";
   SharedPreferences? prefers;
-  List<String> items = [];
-  Map<String, dynamic> data = {"title": 'John Wick\n', "Name": 'Jonathan\n', "Car": 'Mustang GT\n', "year": "${30}\n", "kill": '2.45K people'};
-  String details = "";
-  String decodeMap = "";
+  Map<String, dynamic> mapData = {"title": 'John Wick', "Name": 'Jonathan', "Car": 'Mustang GT', "year": 30, "kill": '2.45K people'};
+  Map<String, dynamic> decodeMapData = {};
 
   instance() async {
     prefers = await SharedPreferences.getInstance();
@@ -29,32 +26,23 @@ class _LocalDataMapState extends State<LocalDataMap> {
     super.initState();
   }
 
-  setData() async {
-    prefers!.setStringList(Constant.items, <String>["Jigar", "Jay", "Harshil", "Tushar"]);
-    prefers!.setString(Constant.data, jsonEncode(data));
+  setData() {
+    prefers!.setString(data, jsonEncode(mapData));
     debugPrint("Data is Set -->");
   }
 
   getData() {
-    items = prefers!.getStringList(Constant.items)!;
-    details = prefers!.getString(
-      Constant.data,
-    )!;
-
-    var encodeMap = prefers!.getString(Constant.data)!;
-    Map<String, dynamic> decodeMap = jsonDecode(encodeMap)!;
-
+    dynamic encodeMap = prefers!.getString(data)!;
+    decodeMapData = jsonDecode(encodeMap)!;
     setState(() {});
-
-    debugPrint("Data is get --> $items");
-    debugPrint("data is get --> $details");
-    debugPrint("data is get --> $decodeMap");
+    debugPrint("data is get --> $decodeMapData");
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.transparent,
         title: const Text("Local Storage Screen"),
       ),
       body: SafeArea(
@@ -65,7 +53,7 @@ class _LocalDataMapState extends State<LocalDataMap> {
               ElevatedButton(
                 onPressed: setData,
                 child: const Text(
-                  "Set Data",
+                  "Setting Data",
                 ),
               ),
               const SizedBox(
@@ -78,9 +66,7 @@ class _LocalDataMapState extends State<LocalDataMap> {
                 ),
               ),
               Text(
-                "items:$items\n"
-                "data:$details"
-                "decodeMap:$decodeMap",
+                "Decoded Map Data:$decodeMapData",
                 style: const TextStyle(
                   fontSize: 15,
                   color: Colors.orangeAccent,
