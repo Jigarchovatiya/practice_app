@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'button_screen.dart';
 import 'local_data/local_data_map.dart';
 
 void main() {
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blueGrey,
         bottomSheetTheme: const BottomSheetThemeData(backgroundColor: Colors.transparent),
       ),
-      home: const LocalDataMap(),
+      home: const ButtonScreen(),
     );
   }
 }
