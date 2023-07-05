@@ -34,24 +34,13 @@ class _BottomBarScreenState extends State<BottomBarScreen> {
           currentIndex: currentIndex,
           type: BottomNavigationBarType.fixed,
           backgroundColor: Colors.transparent,
-
           showSelectedLabels: false,
           showUnselectedLabels: false,
-
           unselectedLabelStyle: TextStyle(),
           selectedLabelStyle: TextStyle(),
-          // selectedFontSize: ,
-          // unselectedFontSize: ,
-          //
-          //
-          // unselectedIconTheme: ,
-          // selectedIconTheme: ,
-
           selectedItemColor: Colors.black,
           unselectedItemColor: Colors.white,
-
           elevation: 0,
-
           landscapeLayout: BottomNavigationBarLandscapeLayout.spread,
           onTap: (value) {
             debugPrint("Value --->> $value");
